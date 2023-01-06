@@ -14,6 +14,7 @@ const Busca = ({ busca }) => {
         <input
           type='text'
           placeholder='Digite o nome do personagem'
+          autoFocus
           onChange={(evento) => pesquisa(evento.target.value)}
           value={texto}
         />

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Personagem = (props) => {
+const Comics = (props) => {
   return (
     <div>
       <p>{props.nome}</p>
@@ -9,4 +9,4 @@ const Personagem = (props) => {
   );
 };
 
-export default Personagem;
+export default Comics;
