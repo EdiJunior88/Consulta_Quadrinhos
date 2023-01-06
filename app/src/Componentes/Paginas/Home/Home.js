@@ -4,7 +4,7 @@ import md5 from "md5";
 import Busca from "../../Busca/Busca";
 import Carregando from "../../Carregando/Carregando";
 import Comics from "../../Cartao/Comics/Comics";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
 const chavePublica = "1ca3e633852222c3b29a64774a0f63f3";
