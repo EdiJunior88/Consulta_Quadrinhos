@@ -4,6 +4,7 @@ import md5 from "md5";
 import Busca from "../../Busca/Busca";
 import Carregando from "../../Carregando/Carregando";
 import Comics from "../../Cartao/Comics/Comics";
+import styles from "../../../CSS/Global.module.css";
 import { Link } from "react-router-dom";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
@@ -67,18 +68,24 @@ const Home = () => {
   }
 
   return (
-    <>
-      <div>
-        <h1>Marvel</h1>
+    <div>
+      <div className={styles.containerCabecalho}>
+        <div className={styles.cabecalho}>
+          <h1 className={styles.cabecalhoTitulo}>Marvel</h1>
 
-        <ul>
-          <li>
-            <Link to='/herois'>Heróis</Link>
-          </li>
-        </ul>
+          <div className={styles.cabecalhoMenu}>
+            <ul>
+              <li>
+                <Link to='/herois'>Heróis</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        <Busca busca={(buscas) => setResultadoPesquisa(buscas)} />
+      <Busca busca={(buscas) => setResultadoPesquisa(buscas)} />
 
+      <div className={styles.Cartao}>
         {comics.map((comic, index) => {
           return (
             <Comics
@@ -89,10 +96,9 @@ const Home = () => {
             />
           );
         })}
-
         {!removerCarregando && <Carregando />}
       </div>
-    </>
+    </div>
   );
 };
 

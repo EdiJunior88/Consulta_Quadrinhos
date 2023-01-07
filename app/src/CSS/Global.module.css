@@ -1,0 +1,58 @@
+@import url(Reset.css);
+
+body {
+  box-sizing: content-box;
+}
+
+/* ########## CABEÇALHO ########## */
+
+.containerCabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cabecalho {
+  display: flex;
+}
+
+.cabecalhoMenu {
+  padding-left: 50vw;
+  padding-right: 5vw;
+}
+
+/* ########## CARTÃO (CARDS) ########## */
+
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.containerCartao {
+  width: 200px;
+  height: auto;
+}
+
+.cartaoTitulo {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.cartaoImagem {
+  width: 100%;
+  height: calc(100vh - 100px);
+  border-radius: 10px;
+}
+
+.Cartao {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 30px;
+  width: 100%;
+}
