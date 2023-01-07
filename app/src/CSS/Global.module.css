@@ -2,6 +2,8 @@
 
 body {
   box-sizing: content-box;
+  width: 100%;
+  height: auto;
 }
 
 /* ########## CABEÇALHO ########## */

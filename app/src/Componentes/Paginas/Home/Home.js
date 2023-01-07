@@ -73,6 +73,7 @@ const Home = () => {
         <div className={styles.cabecalho}>
           <h1 className={styles.cabecalhoTitulo}>Marvel</h1>
 
+          {/* Menu Horizontal */}
           <div className={styles.cabecalhoMenu}>
             <ul>
               <li>
@@ -80,11 +81,14 @@ const Home = () => {
               </li>
             </ul>
           </div>
+          
         </div>
       </div>
 
+      {/* Campo de Busca */}
       <Busca busca={(buscas) => setResultadoPesquisa(buscas)} />
 
+      {/* Cards das Comics */}
       <div className={styles.Cartao}>
         {comics.map((comic, index) => {
           return (
@@ -93,9 +97,12 @@ const Home = () => {
               nome={comic.title}
               imagem={comic.thumbnail}
               alt={comic.title}
+              descricao={comic.description}
             />
           );
         })}
+
+        {/* Loading da Página */}
         {!removerCarregando && <Carregando />}
       </div>
     </div>
