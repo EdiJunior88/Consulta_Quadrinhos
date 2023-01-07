@@ -27,8 +27,20 @@ const Comics = (props) => {
             alt={props.nome}
           />
         </button>
-        <Modal isOpen={modal} onRequestClose={modalFechado}>
-          {props.descricao}
+        <Modal
+          isOpen={modal}
+          onRequestClose={modalFechado}
+          className={styles2.modal}
+          overlayClassName={styles2.tete}>
+          <div className={styles2.containerModalBotaoFechar}>
+            <button onClick={modalFechado} className={styles2.modalBotaoFechar}>
+              X
+            </button>
+          </div>
+          <div className={styles2.modalTextoDescricao}>
+            {props.autor}
+            {props.descricao ? props.descricao : "🚫 Sem descrição"}
+          </div>
         </Modal>
       </div>
     </div>

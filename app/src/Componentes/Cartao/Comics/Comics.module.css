@@ -3,3 +3,40 @@
   border: none;
   cursor: pointer;
 }
+
+.tete{
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(255, 255, 255, 0.562);
+  backdrop-filter: blur(6px);
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 60px;
+  left: 150px;
+  right: 150px;
+  bottom: 100px;
+  background: rgb(160, 158, 158);
+  border-radius: 10px;
+}
+
+.containerModalBotaoFechar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalBotaoFechar {
+  margin: 15px;
+}
+
+.modalTextoDescricao {
+  padding: 0 60px;
+  text-align: justify;
+  text-indent: 35px;
+  line-height: 1.5em;
+}

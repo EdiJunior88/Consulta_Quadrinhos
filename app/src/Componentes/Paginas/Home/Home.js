@@ -22,9 +22,11 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       if (resultadoPesquisa === "") {
+        const limite = 1;
+
         axios
           .get(
-            `${urlPrincipal}comics?ts=${data}&apikey=${chavePublica}&hash=${hash}`
+            `${urlPrincipal}comics?ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}`
           )
           .then((resposta) => {
             setRemoverCarregando(true);
@@ -36,9 +38,11 @@ const Home = () => {
             console.log(erroAPI);
           });
       } else {
+        const limite = 5;
+
         axios
           .get(
-            `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}`
+            `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}`
           )
           .then((resposta) => {
             setRemoverCarregando(true);
@@ -81,7 +85,6 @@ const Home = () => {
               </li>
             </ul>
           </div>
-          
         </div>
       </div>
 
