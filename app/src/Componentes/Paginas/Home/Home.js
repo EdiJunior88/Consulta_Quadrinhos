@@ -19,14 +19,15 @@ const Home = () => {
   const [removerCarregando, setRemoverCarregando] = useState(false);
   const [erroAPI, setErroAPI] = useState(null);
 
+  const [limite, setLimite] = useState(10);
+  const [offset, setOffset] = useState(0);
+
   useEffect(() => {
     setTimeout(() => {
       if (resultadoPesquisa === "") {
-        const limite = 1;
-
         axios
           .get(
-            `${urlPrincipal}comics?ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}`
+            `${urlPrincipal}comics?ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&offset=${offset}&orderBy=focDate`
           )
           .then((resposta) => {
             setRemoverCarregando(true);
@@ -38,11 +39,9 @@ const Home = () => {
             console.log(erroAPI);
           });
       } else {
-        const limite = 5;
-
         axios
           .get(
-            `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}`
+            `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&offset=${offset}&orderBy=focDate`
           )
           .then((resposta) => {
             setRemoverCarregando(true);
@@ -55,7 +54,19 @@ const Home = () => {
           });
       }
     }, 2000);
-  }, [resultadoPesquisa]);
+  }, [resultadoPesquisa, limite, offset]);
+
+  useEffect(() => {
+    const intersectionObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        /* setOffset((contagem) => contagem + 10); */
+        setLimite((limiteAtual) => limiteAtual + 10);
+        console.log("Observe", entries);
+      }
+    });
+
+    intersectionObserver.observe(document.getElementById("sentinela"));
+  }, []);
 
   function atualizarPagina() {
     window.location.reload(false);
@@ -88,15 +99,16 @@ const Home = () => {
         </div>
       </div>
 
+      {limite > 0 ? limite - 0 : null}
       {/* Campo de Busca */}
       <Busca busca={(buscas) => setResultadoPesquisa(buscas)} />
 
       {/* Cards das Comics */}
       <div className={styles.Cartao}>
-        {comics.map((comic, index) => {
+        {comics.map((comic) => {
           return (
             <Comics
-              key={index}
+              key={comic.id}
               nome={comic.title}
               imagem={comic.thumbnail}
               alt={comic.title}
@@ -107,6 +119,8 @@ const Home = () => {
 
         {/* Loading da Página */}
         {!removerCarregando && <Carregando />}
+
+        <div id='sentinela'></div>
       </div>
     </div>
   );
