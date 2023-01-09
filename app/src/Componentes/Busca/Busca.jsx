@@ -8,6 +8,12 @@ const Busca = ({ busca }) => {
     busca(evento);
   };
 
+  function inputTeclado(evento) {
+    if (evento.key === 'Enter') {
+      evento.preventDefault();
+    }
+  }
+
   return (
     <div>
       <form>
@@ -17,6 +23,7 @@ const Busca = ({ busca }) => {
           autoFocus
           onChange={(evento) => pesquisa(evento.target.value)}
           value={texto}
+          onKeyDown={inputTeclado}
         />
       </form>
     </div>
