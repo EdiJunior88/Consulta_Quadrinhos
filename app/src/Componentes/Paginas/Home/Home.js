@@ -5,6 +5,7 @@ import Busca from "../../Busca/Busca";
 import Carregando from "../../Carregando/Carregando";
 import Comics from "../../Cartao/Comics/Comics";
 import styles from "../../../CSS/Global.module.css";
+import styles2 from "./Home.module.css";
 import { Link } from "react-router-dom";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
@@ -16,7 +17,7 @@ const hash = md5(data + chavePrivada + chavePublica);
 const Home = () => {
   const [comics, setComics] = useState([]);
   const [resultadoPesquisa, setResultadoPesquisa] = useState("");
-  const [removerCarregando, setRemoverCarregando] = useState(false);
+  const [carregandoPagina, setCarregandoPagina] = useState(false);
   const [erroAPI, setErroAPI] = useState(null);
 
   const [limite, setLimite] = useState(10);
@@ -25,61 +26,52 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       if (resultadoPesquisa === "") {
-        axios
-          .get(
-            `${urlPrincipal}comics?ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&offset=${offset}&orderBy=focDate`
-          )
-          .then((resposta) => {
-            setRemoverCarregando(true);
-            setComics(resposta.data.data.results);
-            console.log(resposta);
-          })
-          .catch((erroAPI) => {
-            setErroAPI(erroAPI);
-            console.log(erroAPI);
-          });
+        apiComics();
       } else {
-        axios
-          .get(
-            `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&offset=${offset}&orderBy=focDate`
-          )
-          .then((resposta) => {
-            setRemoverCarregando(true);
-            setComics(resposta.data.data.results);
-            console.log(resposta);
-          })
-          .catch((erroAPI) => {
-            setErroAPI(erroAPI);
-            console.log(erroAPI);
-          });
+        apiComicsBusca();
       }
     }, 2000);
-  }, [resultadoPesquisa, limite, offset]);
+  }, [resultadoPesquisa]);
 
-  useEffect(() => {
-    const intersectionObserver = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        /* setOffset((contagem) => contagem + 10); */
-        setLimite((limiteAtual) => limiteAtual + 10);
-        console.log("Observe", entries);
-      }
-    });
+  function apiComics() {
+    axios
+      .get(
+        `${urlPrincipal}comics?ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&offset=${offset}&orderBy=title`
+      )
+      .then((resposta) => {
+        setCarregandoPagina(true);
+        setComics(resposta.data.data.results);
+        console.log(resposta);
+      })
+      .catch((erroAPI) => {
+        setErroAPI(erroAPI);
+        console.log(erroAPI);
+      });
+  }
 
-    intersectionObserver.observe(document.getElementById("sentinela"));
-  }, []);
+  function apiComicsBusca() {
+    axios
+      .get(
+        `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&orderBy=focDate`
+      )
+      .then((resposta) => {
+        setCarregandoPagina(true);
+        setComics(resposta.data.data.results);
+        console.log(resposta);
+      })
+      .catch((erroAPI) => {
+        setErroAPI(erroAPI);
+        console.log(erroAPI);
+      });
+  }
+
+  function maisComics() {
+    setLimite((limiteAtual) => limiteAtual + 30);
+    apiComics();
+  }
 
   function atualizarPagina() {
     window.location.reload(false);
-  }
-
-  if (erroAPI) {
-    return (
-      <div>
-        <h1>Serviço indisponível</h1>
-        <p>Tente novamente mais tarde!</p>
-        <button onClick={atualizarPagina}>Clique para atualizar</button>
-      </div>
-    );
   }
 
   return (
@@ -100,6 +92,7 @@ const Home = () => {
       </div>
 
       {limite > 0 ? limite - 0 : null}
+
       {/* Campo de Busca */}
       <Busca busca={(buscas) => setResultadoPesquisa(buscas)} />
 
@@ -118,9 +111,30 @@ const Home = () => {
         })}
 
         {/* Loading da Página */}
-        {!removerCarregando && <Carregando />}
+        {!carregandoPagina && <Carregando />}
 
-        <div id='sentinela'></div>
+        {erroAPI && (
+          <div>
+            <h1>Serviço indisponível</h1>
+            <p>Tente novamente mais tarde!</p>
+            <button onClick={atualizarPagina}>Clique para atualizar</button>
+          </div>
+        )}
+
+        {limite <= 90 ? (
+          <div>
+            <button onClick={() => maisComics()}>Mais Comics</button>
+          </div>
+        ) : (
+          <div>
+            <button
+              onClick={() =>
+                maisComics(setLimite((limiteAtual) => limiteAtual - 30), setOffset(offset + 100))
+              }>
+              Mais Comics
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
