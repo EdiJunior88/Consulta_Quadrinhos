@@ -1,4 +1,5 @@
 @import url(Reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@600;700&display=swap");
 
 body {
   box-sizing: content-box;
@@ -6,24 +7,10 @@ body {
   height: auto;
 }
 
-/* ########## CABEÇALHO ########## */
+:root {
+  --fonte-menuCabecalho: 'Sofia Sans Condensed', sans-serif;
+  --cor-menuCabecalho: #fff
 
-.containerCabecalho {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.cabecalho {
-  display: flex;
-}
-
-.cabecalhoMenu {
-  padding-left: 50vw;
-  padding-right: 5vw;
 }
 
 /* ########## CARTÃO (CARDS) ########## */
@@ -46,7 +33,7 @@ body {
 
 .cartaoImagem {
   width: 100%;
-  height: calc(100vh - 100px);
+  height: auto;
   border-radius: 10px;
 }
 

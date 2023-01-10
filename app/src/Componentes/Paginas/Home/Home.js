@@ -5,8 +5,8 @@ import Busca from "../../Busca/Busca";
 import Comics from "../../Cartao/Comics/Comics";
 import styles from "../../../CSS/Global.module.css";
 import styles2 from "./Home.module.css";
-import { Link } from "react-router-dom";
 import Carregando from "../../Carregando/Carregando";
+import Cabecalho from "../../Cabecalho/Cabecalho";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
 const chavePublica = "1ca3e633852222c3b29a64774a0f63f3";
@@ -53,22 +53,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className={styles.containerCabecalho}>
-        <div className={styles.cabecalho}>
-          <h1 className={styles.cabecalhoTitulo}>Marvel</h1>
-
-          {/* Menu Horizontal */}
-          <div className={styles.cabecalhoMenu}>
-            <ul>
-              <li>
-                <Link to='/herois'>Heróis</Link>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {limite > 0 ? limite - 10 : null}
+      <Cabecalho />
 
       {/* Campo de Busca */}
       <Busca
@@ -97,6 +82,7 @@ const Home = () => {
           );
         })}
 
+        {/* Mensagem de Erro da API */}
         {erroAPI && (
           <div>
             <p>Preenchimento Obrigatório</p>
@@ -104,10 +90,7 @@ const Home = () => {
         )}
 
         {limite <= 90 ? (
-          <div
-            className={
-              resultadoPesquisa ? styles2.normal : styles2.transparente
-            }>
+          <div className={resultadoPesquisa ? styles2.normal : styles2.oculto}>
             <button
               onClick={() => {
                 setCarregandoImagem(true);
