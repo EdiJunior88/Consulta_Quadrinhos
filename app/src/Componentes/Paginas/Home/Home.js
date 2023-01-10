@@ -29,6 +29,10 @@ const Home = () => {
     }
   }, [resultadoPesquisa, limite]);
 
+  /* Função para chamar a API através do input text */
+  /* O resultado digitado no input text fica armazenado no Hook resultadoPesquisa */
+  /* O Hook limite se refere ao máximo de solicitações por vez da API (100 solicitações por vez) */
+  /* O Hook offset reinicia a contagem do hook limite para não dar um erro de chamada da API caso ultrapasse o limite */
   function apiComics() {
     axios
       .get(
@@ -46,6 +50,7 @@ const Home = () => {
       });
   }
 
+  /* Acrescentando mais 30 novos resultados e chamando a API */
   function maisComics() {
     setLimite((limiteAtual) => limiteAtual + 30);
     apiComics();
