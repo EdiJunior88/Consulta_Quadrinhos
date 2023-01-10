@@ -20,3 +20,6 @@
   font-weight: bolder;
 }
 
+.campoBusca:focus {
+  outline: none;
+}
