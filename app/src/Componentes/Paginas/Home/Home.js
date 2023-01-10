@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import md5 from "md5";
 import Busca from "../../Busca/Busca";
-import Carregando from "../../Carregando/Carregando";
 import Comics from "../../Cartao/Comics/Comics";
 import styles from "../../../CSS/Global.module.css";
 import styles2 from "./Home.module.css";
 import { Link } from "react-router-dom";
+import Carregando from "../../Carregando/Carregando";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
 const chavePublica = "1ca3e633852222c3b29a64774a0f63f3";
@@ -17,47 +17,28 @@ const hash = md5(data + chavePrivada + chavePublica);
 const Home = () => {
   const [comics, setComics] = useState([]);
   const [resultadoPesquisa, setResultadoPesquisa] = useState("");
-  const [carregandoPagina, setCarregandoPagina] = useState(false);
   const [erroAPI, setErroAPI] = useState(null);
 
+  const [carregandoImagem, setCarregandoImagem] = useState(false);
   const [limite, setLimite] = useState(10);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
-      if (resultadoPesquisa === "") {
-        apiComics();
-      } else {
-        apiComicsBusca();
-      }
-    }, 2000);
-  }, [resultadoPesquisa]);
+    if (resultadoPesquisa !== "") {
+      apiComics();
+    }
+  }, [resultadoPesquisa, limite]);
 
   function apiComics() {
     axios
       .get(
-        `${urlPrincipal}comics?ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&offset=${offset}&orderBy=title`
+        `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&offset=${offset}&orderBy=title`
       )
       .then((resposta) => {
-        setCarregandoPagina(true);
+        setCarregandoImagem(false);
         setComics(resposta.data.data.results);
-        console.log(resposta);
-      })
-      .catch((erroAPI) => {
-        setErroAPI(erroAPI);
-        console.log(erroAPI);
-      });
-  }
-
-  function apiComicsBusca() {
-    axios
-      .get(
-        `${urlPrincipal}comics?titleStartsWith=${resultadoPesquisa}&ts=${data}&apikey=${chavePublica}&hash=${hash}&limit=${limite}&orderBy=focDate`
-      )
-      .then((resposta) => {
-        setCarregandoPagina(true);
-        setComics(resposta.data.data.results);
-        console.log(resposta);
+        setErroAPI("");
+        console.log("CHAMANDO API", resposta, limite);
       })
       .catch((erroAPI) => {
         setErroAPI(erroAPI);
@@ -68,10 +49,6 @@ const Home = () => {
   function maisComics() {
     setLimite((limiteAtual) => limiteAtual + 30);
     apiComics();
-  }
-
-  function atualizarPagina() {
-    window.location.reload(false);
   }
 
   return (
@@ -91,10 +68,20 @@ const Home = () => {
         </div>
       </div>
 
-      {limite > 0 ? limite - 0 : null}
+      {limite > 0 ? limite - 10 : null}
 
       {/* Campo de Busca */}
-      <Busca busca={(buscas) => setResultadoPesquisa(buscas)} />
+      <Busca
+        busca={(buscas) => {
+          setTimeout(() => {
+            setCarregandoImagem(true);
+            setResultadoPesquisa(buscas);
+          }, 3000);
+        }}
+      />
+
+      {/* Loading da Página */}
+      {carregandoImagem && <Carregando />}
 
       {/* Cards das Comics */}
       <div className={styles.Cartao}>
@@ -110,26 +97,36 @@ const Home = () => {
           );
         })}
 
-        {/* Loading da Página */}
-        {!carregandoPagina && <Carregando />}
-
         {erroAPI && (
           <div>
-            <h1>Serviço indisponível</h1>
-            <p>Tente novamente mais tarde!</p>
-            <button onClick={atualizarPagina}>Clique para atualizar</button>
+            <p>Preenchimento Obrigatório</p>
           </div>
         )}
 
         {limite <= 90 ? (
-          <div>
-            <button onClick={() => maisComics()}>Mais Comics</button>
+          <div
+            className={
+              resultadoPesquisa ? styles2.normal : styles2.transparente
+            }>
+            <button
+              onClick={() => {
+                setCarregandoImagem(true);
+                setTimeout(() => maisComics(console.log("clicou"), 500));
+              }}>
+              Mais Comics
+            </button>
           </div>
         ) : (
           <div>
             <button
               onClick={() =>
-                maisComics(setLimite((limiteAtual) => limiteAtual - 30), setOffset(offset + 100))
+                setTimeout(() => {
+                  setCarregandoImagem(true);
+                  maisComics(
+                    setLimite((limiteAtual) => limiteAtual - 30),
+                    setOffset(offset + 100)
+                  );
+                }, 100)
               }>
               Mais Comics
             </button>
