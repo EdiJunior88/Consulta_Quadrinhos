@@ -8,9 +8,28 @@ body {
 }
 
 :root {
-  --fonte-menuCabecalho: 'Sofia Sans Condensed', sans-serif;
-  --cor-menuCabecalho: #fff
+  --fonte-menuCabecalho: "Sofia Sans Condensed", sans-serif;
+  --cor-menuCabecalho: #fff;
 
+  --fonte-campoBusca: "Sofia Sans Condensed", sans-serif;
+  --fonte-texto-campoBusca: #42119e;
+  --cor-borda-campoBusca: #ff0000;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: red;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: red;
 }
 
 /* ########## CARTÃO (CARDS) ########## */
@@ -40,7 +59,7 @@ body {
 .Cartao {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 30px;
   width: 100%;

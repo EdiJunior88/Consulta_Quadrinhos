@@ -27,7 +27,7 @@ body {
 }
 
 .cabecalhoMenu {
-  padding-left: 50%;
+  padding-left: calc(50% - 100px);
   font-family: var(--fonte-menuCabecalho);
 }
 

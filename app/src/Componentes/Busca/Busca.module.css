@@ -1,0 +1,22 @@
+.containerCampoBusca {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 80px 0;
+}
+
+.campoBusca {
+  width: 400px;
+  height: 35px;
+  border-radius: 8px;
+}
+
+.campoBusca[type="text"] {
+  padding-left: 10px;
+  color: var(--fonte-texto-campoBusca);
+  font-family: var(--fonte-campoBusca);
+  border-color: var(--cor-borda-campoBusca);
+  font-size: 1.4em;
+  font-weight: bolder;
+}
+
