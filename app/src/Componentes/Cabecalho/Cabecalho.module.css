@@ -28,11 +28,10 @@ body {
 
 .cabecalhoMenu {
   padding-left: calc(50% - 100px);
-  font-family: var(--fonte-menuCabecalho);
 }
 
 .cabecalhoMenuLink {
   text-decoration: none;
-  color: var(--cor-menuCabecalho);
+  color: var(--cor-texto-menuCabecalho);
   font-size: 2em;
 }

@@ -2,3 +2,23 @@
   display: none;
 }
 
+.containerBotaoCarregarComics {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.botaoCarregarComics button {
+  width: 150px;
+  height: 35px;
+  margin: 50px 0;
+  border-radius: 8px;
+  background: var(--cor-fundo-botaoCarregarComics);
+  border-color: var(--cor-borda-botaoCarregarComics);
+  color: var(--cor-texto-botaoCarregarComics);
+  font-family: var(--fonte-texto-botaoCarregarComics);
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}

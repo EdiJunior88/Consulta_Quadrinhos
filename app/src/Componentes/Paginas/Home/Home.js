@@ -52,7 +52,7 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <>
       <Cabecalho />
 
       {/* Campo de Busca */}
@@ -88,10 +88,16 @@ const Home = () => {
             <p>Preenchimento Obrigatório</p>
           </div>
         )}
+      </div>
 
-        {limite <= 90 ? (
-          <div className={resultadoPesquisa ? styles2.normal : styles2.oculto}>
+      {limite <= 90 ? (
+        <div className={styles2.containerBotaoCarregarComics}>
+          <div
+            className={
+              resultadoPesquisa ? styles2.botaoCarregarComics : styles2.oculto
+            }>
             <button
+              className={styles2.botaoCarregarComics}
               onClick={() => {
                 setCarregandoImagem(true);
                 setTimeout(() => maisComics(console.log("clicou"), 500));
@@ -99,9 +105,12 @@ const Home = () => {
               Mais Comics
             </button>
           </div>
-        ) : (
-          <div>
+        </div>
+      ) : (
+        <div className={styles2.containerBotaoCarregarComics}>
+          <div className={styles2.botaoCarregarComics}>
             <button
+              className={styles2.botaoCarregarComics}
               onClick={() =>
                 setTimeout(() => {
                   setCarregandoImagem(true);
@@ -109,14 +118,14 @@ const Home = () => {
                     setLimite((limiteAtual) => limiteAtual - 30),
                     setOffset(offset + 100)
                   );
-                }, 100)
+                }, 500)
               }>
               Mais Comics
             </button>
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 

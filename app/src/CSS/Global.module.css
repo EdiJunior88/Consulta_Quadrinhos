@@ -5,15 +5,20 @@ body {
   box-sizing: content-box;
   width: 100%;
   height: auto;
+  font-family: "Sofia Sans Condensed", sans-serif;
 }
 
 :root {
-  --fonte-menuCabecalho: "Sofia Sans Condensed", sans-serif;
-  --cor-menuCabecalho: #fff;
+  --cor-texto-menuCabecalho: #fff;
+  --fonte-texto-menuCabecalho: "Sofia Sans Condensed", sans-serif;
 
-  --fonte-campoBusca: "Sofia Sans Condensed", sans-serif;
-  --fonte-texto-campoBusca: #42119e;
+  --cor-texto-campoBusca: #42119e;
   --cor-borda-campoBusca: #ff0000;
+
+  --cor-fundo-botaoCarregarComics: #fff;
+  --cor-borda-botaoCarregarComics: #ff0000;
+  --cor-texto-botaoCarregarComics: #42119e;
+  --fonte-texto-botaoCarregarComics: "Sofia Sans Condensed", sans-serif;
 }
 
 ::placeholder {

@@ -13,9 +13,9 @@
 
 .campoBusca[type="text"] {
   padding-left: 10px;
-  color: var(--fonte-texto-campoBusca);
-  font-family: var(--fonte-campoBusca);
+  color: var(--cor-texto-campoBusca);
   border-color: var(--cor-borda-campoBusca);
+  font-family: var(--fonte-texto-menuCabecalho);
   font-size: 1.4em;
   font-weight: bolder;
 }
