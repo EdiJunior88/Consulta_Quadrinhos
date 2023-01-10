@@ -31,7 +31,7 @@ const Comics = (props) => {
           isOpen={modal}
           onRequestClose={modalFechado}
           className={styles2.modal}
-          overlayClassName={styles2.tete}>
+          overlayClassName={styles2.overlayModal}>
           <div className={styles2.containerModalBotaoFechar}>
             <button onClick={modalFechado} className={styles2.modalBotaoFechar}>
               X

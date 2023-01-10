@@ -4,10 +4,10 @@
   cursor: pointer;
 }
 
-.tete{
+.overlayModal {
   position: fixed;
   inset: 0px;
-  background-color: rgba(255, 255, 255, 0.562);
+  background-color: var(--cor-fundo-overlayModal);
   backdrop-filter: blur(6px);
 }
 
@@ -19,9 +19,9 @@
   top: 60px;
   left: 150px;
   right: 150px;
-  bottom: 100px;
-  background: rgb(160, 158, 158);
-  border-radius: 10px;
+  bottom: 20vh;
+  background: var(--cor-fundo-Modal);
+  border-radius: 6px;
 }
 
 .containerModalBotaoFechar {
@@ -32,6 +32,11 @@
 
 .modalBotaoFechar {
   margin: 15px;
+  border-color: var(--cor-borda-botaoModal);
+  border-radius: 8px;
+  font-weight: bolder;
+  color: var(--cor-letra-botaoModal);
+  cursor: pointer;
 }
 
 .modalTextoDescricao {
@@ -39,4 +44,6 @@
   text-align: justify;
   text-indent: 35px;
   line-height: 1.5em;
+  font-size: 1.2em;
+  color: var(--cor-texto-modalTextoDescricao);
 }

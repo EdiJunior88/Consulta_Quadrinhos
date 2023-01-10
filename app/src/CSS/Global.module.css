@@ -9,32 +9,41 @@ body {
 }
 
 :root {
+  --cor-sombra-cartaoTitulo: 1px 1px 3px #fff;
+  --cor-texto-cartaoTitulo: #0648a9;
+
   --cor-texto-menuCabecalho: #fff;
   --fonte-texto-menuCabecalho: "Sofia Sans Condensed", sans-serif;
 
-  --cor-texto-campoBusca: #42119e;
-  --cor-borda-campoBusca: #ff0000;
+  --cor-texto-campoBusca: #0648a9;
+  --cor-borda-campoBusca: #da5047;
 
   --cor-fundo-botaoCarregarComics: #fff;
-  --cor-borda-botaoCarregarComics: #ff0000;
-  --cor-texto-botaoCarregarComics: #42119e;
+  --cor-borda-botaoCarregarComics: #da5047;
+  --cor-texto-botaoCarregarComics: #0648a9;
   --fonte-texto-botaoCarregarComics: "Sofia Sans Condensed", sans-serif;
+
+  --cor-fundo-Modal: #fff;
+  --cor-fundo-overlayModal: #0647a950;
+  --cor-borda-botaoModal: #da5047;
+  --cor-letra-botaoModal: #da5047;
+  --cor-texto-modalTextoDescricao: #0648a9;
 }
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
+  color: #da5047;
   opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: red;
+  color: #da5047;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: red;
+  color: #da5047;
 }
 
 /* ########## CARTÃO (CARDS) ########## */
@@ -53,6 +62,9 @@ body {
 .cartaoTitulo {
   text-align: center;
   padding-bottom: 10px;
+  text-shadow: var(--cor-sombra-cartaoTitulo);
+  color: var(--cor-texto-cartaoTitulo);
+  font-size: 1.05em;
 }
 
 .cartaoImagem {
