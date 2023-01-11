@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../../../CSS/Global.module.css";
 import Modal from "react-modal";
 import styles2 from "./Comics.module.css";
+import FormularioEnvio from "../../FormularioEnvio/FormularioEnvio";
 
 Modal.setAppElement("#root");
 
@@ -14,6 +15,11 @@ const Comics = (props) => {
 
   function modalFechado() {
     setModal(false);
+  }
+
+  /* função para abrir um outro modal composto por outro componente */
+  function modalOutroComponente() {
+    <FormularioEnvio />;
   }
 
   return (
@@ -39,7 +45,10 @@ const Comics = (props) => {
           </div>
           <div className={styles2.modalTextoDescricao}>
             {props.autor}
-            {props.descricao ? props.descricao : "🚫 Sem descrição"}
+            {props.descricao ? props.descricao : <div className={styles2.modalTextoSemDescricao}>🚫 Sem descrição</div>}
+          </div>
+          <div>
+            <FormularioEnvio abrir={modalOutroComponente} />
           </div>
         </Modal>
       </div>

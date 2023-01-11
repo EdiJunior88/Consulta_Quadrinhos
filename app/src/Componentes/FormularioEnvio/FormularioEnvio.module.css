@@ -1,0 +1,88 @@
+.botaoCartao {
+  width: 150px;
+  height: 35px;
+  margin: 50px 0;
+  border-radius: 8px;
+  background: var(--cor-fundo-botaoCarregarComics);
+  border-color: var(--cor-borda-botaoCarregarComics);
+  color: var(--cor-texto-botaoCarregarComics);
+  font-family: var(--fonte-texto-botaoCarregarComics);
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.overlayModal {
+  position: fixed;
+  inset: 0px;
+  background-color: var(--cor-fundo-overlayModal);
+  backdrop-filter: blur(6px);
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 60px;
+  left: 150px;
+  right: 150px;
+  bottom: 20vh;
+  background: var(--cor-fundo-Modal-FormularioEnvio);
+  border-radius: 6px;
+}
+
+.containerModalBotaoFechar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalBotaoFechar {
+  margin: 15px;
+  border-color: var(--cor-borda-botaoModal);
+  border-radius: 8px;
+  font-weight: bolder;
+  color: var(--cor-letra-botaoModal);
+  cursor: pointer;
+}
+
+.modalTextoDescricao {
+  padding: 0 60px;
+  text-align: justify;
+  text-indent: 35px;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  color: var(--cor-texto-modalTextoDescricao);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  padding-bottom: 10px;
+}
+
+.formulario > label > input {
+  padding: 3px 0;
+  border-color: var(--cor-borda-botaoModal);
+  border-radius: 8px;
+  font-weight: bolder;
+  color: var(--cor-texto-FormularioEnvio);
+  font-family: var(--fonte-texto-FormularioEnvio);
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+
+.formulario > label > input[type="text"] {
+  padding-left: 10px;
+}
+
+.formularioTextoEnvio {
+  padding-top: 35px;
+  color: var(--cor-texto-formularioTextoEnvio);
+  font-size: 1.5em;
+  text-shadow: var(--cor-sombra-FormularioEnvio);
+}
