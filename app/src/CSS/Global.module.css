@@ -1,6 +1,10 @@
 @import url(Reset.css);
 @import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@600;700&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: content-box;
   width: 100%;

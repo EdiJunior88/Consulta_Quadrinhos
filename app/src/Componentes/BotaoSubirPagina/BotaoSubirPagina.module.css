@@ -1,0 +1,25 @@
+.containerBotaoSubirPagina {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding-left: 160px;
+}
+
+.botaoSubirPagina button {
+  width: 50px;
+  height: 35px;
+  border-radius: 8px;
+  background: var(--cor-fundo-botaoCarregarComics);
+  border-color: var(--cor-borda-botaoCarregarComics);
+  color: var(--cor-texto-botaoCarregarComics);
+  font-family: var(--fonte-texto-botaoCarregarComics);
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botaoSubirPaginaDesenho {
+  font-size: 2.8em;
+  margin: -17px 0 0 -13px;
+}
