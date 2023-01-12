@@ -83,6 +83,9 @@ const Home = () => {
               imagem={comic.thumbnail}
               alt={comic.title}
               descricao={comic.description}
+              autor={comic.creators.items.map((nomeAutor, id) => (
+                <span key={id}>{nomeAutor.name}</span>
+              ))}
             />
           );
         })}
