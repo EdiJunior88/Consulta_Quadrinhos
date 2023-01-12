@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Modal from "react-modal";
+import Botao from "../Botao/Botao";
 import styles from "./FormularioEnvio.module.css";
 
 const FormularioEnvio = (props) => {
@@ -24,8 +25,8 @@ const FormularioEnvio = (props) => {
   } = useForm();
 
   const onSubmit = () => {
-    setMensagem("Envio da Comic para o seu endereço");
-    console.log("enviado");
+    setMensagem("Comic enviada para o endereço cadastrado");
+    /* console.log("enviado"); */
   };
 
   const checkCEP = (evento) => {
@@ -109,10 +110,13 @@ const FormularioEnvio = (props) => {
                 Estado:
                 <input type='text' {...register("uf", { required: true })} />
               </label>
-              <button type='submit'>Enviar</button>
+              <div className={styles.botaoEnviar}>
+                <Botao nome={"Enviar"} />
+              </div>
             </form>
           </div>
-            <div className={styles.formularioTextoEnvio}>{mensagem}</div>
+
+          <div className={styles.formularioTextoEnvio}>{mensagem}</div>
         </Modal>
       </div>
     </div>

@@ -59,6 +59,7 @@
 .formulario {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 
 .formulario label {
@@ -76,13 +77,18 @@
   margin-left: 10px;
 }
 
-.formulario > label > input[type="text"] {
-  padding-left: 10px;
-}
-
 .formularioTextoEnvio {
-  padding-top: 35px;
+  padding-top: 25px;
+  height: 20px;
   color: var(--cor-texto-formularioTextoEnvio);
   font-size: 1.5em;
   text-shadow: var(--cor-sombra-FormularioEnvio);
+}
+
+.botaoEnviar {
+  width: 100%;
+}
+
+.botaoEnviar button {
+  margin-top: 20px;
 }

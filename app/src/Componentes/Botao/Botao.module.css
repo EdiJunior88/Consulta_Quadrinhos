@@ -12,7 +12,7 @@
 .botaoCarregarComics button {
   width: 150px;
   height: 35px;
-  margin: 50px 0;
+  margin-top: 50px;
   border-radius: 8px;
   background: var(--cor-fundo-botaoCarregarComics);
   border-color: var(--cor-borda-botaoCarregarComics);
