@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./app/src/Imagens/marvel-comics-logo.png" width="30%" >
+  <img src="./app/src/Imagens/marvel-comics-logo.png" width="25%" >
 </p>
 
 <h2>Consulta Quadrinhos (Comics)</h2>
