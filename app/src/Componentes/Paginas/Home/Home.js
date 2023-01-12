@@ -7,10 +7,11 @@ import styles from "../../../CSS/Global.module.css";
 import styles2 from "./Home.module.css";
 import Carregando from "../../Carregando/Carregando";
 import Cabecalho from "../../Cabecalho/Cabecalho";
+import Botao from "../../Botao/Botao";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
-const chavePublica = "1ca3e633852222c3b29a64774a0f63f3";
-const chavePrivada = "1bfd13d742e0f5986887a831719eb52fef411820";
+const chavePublica = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PUBLICA;
+const chavePrivada = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PRIVADA
 const data = Number(new Date());
 const hash = md5(data + chavePrivada + chavePublica);
 
@@ -104,34 +105,28 @@ const Home = () => {
             className={
               resultadoPesquisa ? styles2.botaoCarregarComics : styles2.oculto
             }>
-            <button
-              className={styles2.botaoCarregarComics}
-              onClick={() => {
+            <Botao 
+               onClick={() => {
                 setCarregandoImagem(true);
                 setTimeout(() => maisComics(console.log("clicou"), 500));
-              }}>
-              Mais Comics
-            </button>
+              }}
+              nome="Mais Comics"
+            />
           </div>
         </div>
       ) : (
-        <div className={styles2.containerBotaoCarregarComics}>
-          <div className={styles2.botaoCarregarComics}>
-            <button
-              className={styles2.botaoCarregarComics}
-              onClick={() =>
-                setTimeout(() => {
-                  setCarregandoImagem(true);
-                  maisComics(
-                    setLimite((limiteAtual) => limiteAtual - 30),
-                    setOffset(offset + 100)
-                  );
-                }, 500)
-              }>
-              Mais Comics
-            </button>
-          </div>
-        </div>
+        <Botao
+          onClick={() =>
+            setTimeout(() => {
+              setCarregandoImagem(true);
+              maisComics(
+                setLimite((limiteAtual) => limiteAtual - 30),
+                setOffset(offset + 100)
+              );
+            }, 500)
+          }
+          nome="Mais Comics"
+        />
       )}
     </>
   );
