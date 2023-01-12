@@ -12,7 +12,7 @@ import Rodape from "../../Componentes/Rodape/Rodape";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
 const chavePublica = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PUBLICA;
-const chavePrivada = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PRIVADA
+const chavePrivada = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PRIVADA;
 const data = Number(new Date());
 const hash = md5(data + chavePrivada + chavePublica);
 
@@ -25,6 +25,7 @@ const Home = () => {
   const [limite, setLimite] = useState(10);
   const [offset, setOffset] = useState(0);
 
+  /* Evita Carregar a API sem ter alguma informação digitada no input */
   useEffect(() => {
     if (resultadoPesquisa !== "") {
       apiComics();
@@ -65,7 +66,7 @@ const Home = () => {
       </header>
 
       <section>
-        {/* Campo de Busca */}
+        {/* Campo de Busca (Componente)*/}
         <Busca
           busca={(buscas) => {
             setTimeout(() => {
@@ -74,9 +75,11 @@ const Home = () => {
             }, 3000);
           }}
         />
+
         {/* Loading da Página */}
         {carregandoImagem && <Carregando />}
-        {/* Cards das Comics */}
+
+        {/* Cards (Cartões) das Comics */}
         <div className={styles.Cartao}>
           {comics.map((comic) => {
             return (
@@ -92,6 +95,7 @@ const Home = () => {
               />
             );
           })}
+
           {/* Mensagem de Erro da API */}
           {erroAPI && (
             <div>
@@ -99,6 +103,11 @@ const Home = () => {
             </div>
           )}
         </div>
+
+        {/* Se o número de requisições for menor de 90
+        carrega a API até o limite máximo de 100 requisições */}
+        {/* caso contrário, vai carregar a API com um "limit" diferente
+        para não dar o ERRO 409 de falha de requisição */}
         {limite <= 90 ? (
           <div className={styles2.containerBotaoCarregarComics}>
             <div
@@ -106,11 +115,11 @@ const Home = () => {
                 resultadoPesquisa ? styles2.botaoCarregarComics : styles2.oculto
               }>
               <Botao
-                 onClick={() => {
+                onClick={() => {
                   setCarregandoImagem(true);
                   setTimeout(() => maisComics(console.log("clicou"), 500));
                 }}
-                nome="Mais Comics"
+                nome='Mais Comics'
               />
             </div>
           </div>
@@ -125,7 +134,7 @@ const Home = () => {
                 );
               }, 500)
             }
-            nome="Mais Comics"
+            nome='Mais Comics'
           />
         )}
       </section>
