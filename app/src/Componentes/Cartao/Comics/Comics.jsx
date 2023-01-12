@@ -44,9 +44,20 @@ const Comics = (props) => {
             </button>
           </div>
           <div className={styles2.modalTextoDescricao}>
-            {props.autor}
-            {props.descricao ? props.descricao : <div className={styles2.modalTextoSemDescricao}>🚫 Sem descrição</div>}
+            {props.descricao ? (
+              props.descricao
+            ) : (
+              <div className={styles2.modalTextoSemDescricao}>
+                🚫 Sem descrição
+              </div>
+            )}
+
+            <div className={styles2.containerTextoModal}>
+              Autor(es)
+              <span className={styles2.textoModal}>{props.autor}</span>
+            </div>
           </div>
+
           <div>
             <FormularioEnvio abrir={modalOutroComponente} />
           </div>

@@ -50,5 +50,21 @@
 
 .modalTextoSemDescricao {
   text-indent: 0;
+  text-align: center;
 }
 
+.containerTextoModal {
+  display: flex;
+  padding-top: 15px;
+  color: var(--cor-texto-containerTextoAutor);
+}
+
+.textoModal {
+  display: inline-flex;
+  flex-wrap: wrap;
+  text-indent: 0;
+}
+
+.textoModal span {
+  padding: 0 10px;
+}
