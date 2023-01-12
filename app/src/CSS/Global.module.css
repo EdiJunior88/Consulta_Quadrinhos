@@ -39,6 +39,8 @@ body {
   --cor-texto-formularioTextoEnvio: #da5047;
   --fonte-texto-FormularioEnvio: "Sofia Sans Condensed", sans-serif;
   --cor-sombra-FormularioEnvio: 3px 3px 9px #000;
+
+  --cor-texto-containerTextoAutor: #da5047;
 }
 
 ::placeholder {
