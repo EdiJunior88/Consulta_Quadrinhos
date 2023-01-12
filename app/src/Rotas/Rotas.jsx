@@ -1,14 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PaginaHerois from "../Componentes/Paginas/Herois/PaginaHerois";
-import Home from "../Componentes/Paginas/Home/Home";
+import Home from "../Paginas/Home/Home";
+import Herois from "../Paginas/Herois/Herois";
 
 const Rotas = () => {
   return (
     <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route exact path="/herois" element={<PaginaHerois />}/>
+          <Route exact path="/herois" element={<Herois />}/>
         </Routes>
     </BrowserRouter>
   );
