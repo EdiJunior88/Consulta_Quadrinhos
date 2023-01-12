@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background: red;
+  background: var(--cor-fundo-cabecalho);
   padding: 5px 70px;
 }
 

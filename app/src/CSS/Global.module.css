@@ -4,7 +4,7 @@
 body {
   box-sizing: content-box;
   width: 100%;
-  height: auto;
+  height: 100%;
   font-family: "Sofia Sans Condensed", sans-serif;
 }
 
@@ -12,6 +12,7 @@ body {
   --cor-sombra-cartaoTitulo: 1px 1px 3px #fff;
   --cor-texto-cartaoTitulo: #0648a9;
 
+  --cor-fundo-cabecalho: #d30f01;
   --cor-texto-menuCabecalho: #fff;
   --fonte-texto-menuCabecalho: "Sofia Sans Condensed", sans-serif;
 
@@ -41,6 +42,9 @@ body {
   --cor-sombra-FormularioEnvio: 3px 3px 9px #000;
 
   --cor-texto-containerTextoAutor: #da5047;
+
+  --cor-texto-rodapeTexto: #fff;
+  --cor-fundo-rodapeTexto: #d30f01;
 }
 
 ::placeholder {
