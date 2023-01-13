@@ -45,11 +45,11 @@ const Herois = () => {
         setCarregandoImagem(false);
         setHerois(resposta.data.data.results);
         setErroAPI("");
-        console.log("CHAMANDO API", resposta, limite);
+        /* console.log("CHAMANDO API", resposta, limite); */
       })
       .catch((erroAPI) => {
         setErroAPI(erroAPI);
-        console.log(erroAPI);
+        /* console.log(erroAPI); */
       });
   }
 
