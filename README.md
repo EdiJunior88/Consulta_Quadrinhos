@@ -92,6 +92,7 @@
 <hr>
 
 <h3>Site do projeto</h3>
+<strong><a href="https://consulta-quadrinhos.netlify.app/" target="_blank">https://consulta-quadrinhos.netlify.app/</a></strong>
 
 <hr>
 
