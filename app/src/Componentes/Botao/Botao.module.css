@@ -1,18 +1,14 @@
-.oculto {
-  display: none;
-}
-
 .containerBotaoCarregarComics {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
+  margin: 50px 0 100px 0;
 }
 
 .botaoCarregarComics button {
   width: 150px;
   height: 35px;
-  margin-top: 50px;
   border-radius: 8px;
   background: var(--cor-fundo-botaoCarregarComics);
   border-color: var(--cor-borda-botaoCarregarComics);

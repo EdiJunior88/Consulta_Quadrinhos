@@ -110,10 +110,10 @@ const Home = () => {
         {/* caso contrário, vai carregar a API com um "limit" diferente
         para não dar o ERRO 409 de falha de requisição */}
         {limite <= 90 ? (
-          <div className={styles2.containerBotaoCarregarComics}>
+          <div className={styles.containerBotaoCarregarComics}>
             <div
               className={
-                resultadoPesquisa ? styles2.botaoCarregarComics : styles2.oculto
+                resultadoPesquisa ? styles.botaoCarregarComics : styles2.oculto
               }>
               <Botao
                 onClick={() => {
@@ -125,18 +125,21 @@ const Home = () => {
             </div>
           </div>
         ) : (
-          <Botao
-            onClick={() =>
-              setTimeout(() => {
-                setCarregandoImagem(true);
-                maisComics(
-                  setLimite((limiteAtual) => limiteAtual - 30),
-                  setOffset(offset + 100)
-                );
-              }, 500)
-            }
-            nome='Mais Comics'
-          />
+          <div className={styles.containerBotaoCarregarComics}>
+            <Botao
+              id={styles.containerBotaoCarregarComics}
+              onClick={() =>
+                setTimeout(() => {
+                  setCarregandoImagem(true);
+                  maisComics(
+                    setLimite((limiteAtual) => limiteAtual - 30),
+                    setOffset(offset + 100)
+                  );
+                }, 500)
+              }
+              nome='Mais Comics'
+            />
+          </div>
         )}
       </section>
 

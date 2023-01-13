@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import md5 from "md5";
 import Busca from "../../Componentes/Busca/Busca";
+import HeroisCartao from "../../Componentes/Cartao/Herois/HeroisCartao";
 import styles from "../../CSS/Global.module.css";
 import styles2 from "./Herois.module.css";
 import Carregando from "../../Componentes/Carregando/Carregando";
 import Cabecalho from "../../Componentes/Cabecalho/Cabecalho";
 import Botao from "../../Componentes/Botao/Botao";
 import Rodape from "../../Componentes/Rodape/Rodape";
-import HeroisCartao from "../../Componentes/Cartao/Herois/HeroisCartao";
 
 const urlPrincipal = "http://gateway.marvel.com/v1/public/";
 const chavePublica = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PUBLICA;
