@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "../../../CSS/Global.module.css";
 import Modal from "react-modal";
-import styles2 from "./Comics.module.css";
+import styles2 from "./ComicsCartao.module.css";
 import FormularioEnvio from "../../FormularioEnvio/FormularioEnvio";
 
 Modal.setAppElement("#root");
 
-const Comics = (props) => {
+const ComicsCartao = (props) => {
   const [modal, setModal] = useState(false);
 
   function modalAberto() {
@@ -67,4 +67,4 @@ const Comics = (props) => {
   );
 };
 
-export default Comics;
+export default ComicsCartao;

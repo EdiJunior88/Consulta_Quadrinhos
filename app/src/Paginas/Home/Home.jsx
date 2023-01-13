@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import md5 from "md5";
 import Busca from "../../Componentes/Busca/Busca";
-import Comics from "../../Componentes/Cartao/Comics/Comics";
+import Comics from "../../Componentes/Cartao/Comics/ComicsCartao";
 import styles from "../../CSS/Global.module.css";
 import styles2 from "./Home.module.css";
 import Carregando from "../../Componentes/Carregando/Carregando";

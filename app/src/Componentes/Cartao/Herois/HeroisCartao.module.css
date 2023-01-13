@@ -1,0 +1,70 @@
+.botaoCartao {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.overlayModal {
+  position: fixed;
+  inset: 0px;
+  background-color: var(--cor-fundo-overlayModal);
+  backdrop-filter: blur(6px);
+}
+
+.modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 60px;
+  left: 150px;
+  right: 150px;
+  bottom: 10vh;
+  background: var(--cor-fundo-Modal);
+  border-radius: 6px;
+}
+
+.containerModalBotaoFechar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modalBotaoFechar {
+  margin: 15px;
+  border-color: var(--cor-borda-botaoModal);
+  border-radius: 8px;
+  font-weight: bolder;
+  color: var(--cor-letra-botaoModal);
+  cursor: pointer;
+}
+
+.modalTextoDescricao {
+  padding: 0 60px;
+  text-align: justify;
+  text-indent: 35px;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  color: var(--cor-texto-modalTextoDescricao);
+}
+
+.modalTextoSemDescricao {
+  text-indent: 0;
+  text-align: center;
+}
+
+.containerTextoModal {
+  display: flex;
+  padding-top: 15px;
+  color: var(--cor-texto-containerTextoAutor);
+}
+
+.textoModal {
+  display: inline-flex;
+  flex-wrap: wrap;
+  text-indent: 0;
+}
+
+.textoModal span {
+  padding: 0 10px;
+}

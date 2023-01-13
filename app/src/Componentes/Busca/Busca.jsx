@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Busca.module.css";
 
-const Busca = ({ busca, props }) => {
+const Busca = ({ busca }) => {
   const [texto, setTexto] = useState("");
 
   const pesquisa = (evento) => {
@@ -21,7 +21,7 @@ const Busca = ({ busca, props }) => {
         <input
           type='text'
           className={styles.campoBusca}
-          placeholder="Digite o nome da comic"
+          placeholder="Digite um nome: Thor, Hulk, Spider-Man..."
           autoFocus
           onChange={(evento) => pesquisa(evento.target.value)}
           value={texto}
