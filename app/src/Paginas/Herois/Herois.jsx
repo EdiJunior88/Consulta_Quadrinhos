@@ -17,7 +17,7 @@ const data = Number(new Date());
 const hash = md5(data + chavePrivada + chavePublica);
 
 const Herois = () => {
-  const [comics, setHerois] = useState([]);
+  const [herois, setHerois] = useState([]);
   const [resultadoPesquisa, setResultadoPesquisa] = useState("");
   const [erroAPI, setErroAPI] = useState(null);
 
@@ -54,7 +54,7 @@ const Herois = () => {
   }
 
   /* Acrescentando mais 30 novos resultados e chamando a API */
-  function maisComics() {
+  function maisHerois() {
     setLimite((limiteAtual) => limiteAtual + 30);
     apiHerois();
   }
@@ -62,13 +62,14 @@ const Herois = () => {
   return (
     <>
       <header>
-        <Cabecalho />
+        <Cabecalho id={styles2.cabecalho} nome='Home' to='/' />
       </header>
 
       <section>
         {/* Campo de Busca (Componente)*/}
+
         <Busca
-        placeholder={"teste"}
+          placeholder='Digite um nome: Thor, Hulk, Spider-Man...'
           busca={(buscas) => {
             setTimeout(() => {
               setCarregandoImagem(true);
@@ -80,17 +81,19 @@ const Herois = () => {
         {/* Loading da Página */}
         {carregandoImagem && <Carregando />}
 
-        {/* Cards (Cartões) das Comics */}
+        {/* Cards (Cartões) dos Heróis */}
         <div className={styles.Cartao}>
-          {comics.map((comic) => {
+          {herois.map((heroi) => {
             return (
               <HeroisCartao
-                key={comic.id}
-                nome={comic.name}
-                imagem={comic.thumbnail}
-                alt={comic.title}
-                descricao={comic.description}
-                quadrinhos={comic.comics.items.map((quadrinhos) => <span>{quadrinhos.name}</span>)}
+                key={heroi.id}
+                nome={heroi.name}
+                imagem={heroi.thumbnail}
+                alt={heroi.title}
+                descricao={heroi.description}
+                quadrinhos={heroi.comics.items.map((herois, id) => (
+                  <span key={id}>{herois.name}</span>
+                ))}
               />
             );
           })}
@@ -108,15 +111,15 @@ const Herois = () => {
         {/* caso contrário, vai carregar a API com um "limit" diferente
         para não dar o ERRO 409 de falha de requisição */}
         {limite <= 90 ? (
-          <div className={styles2.containerBotaoCarregarComics}>
+          <div className={styles2.containerBotaoCarregarHerois}>
             <div
               className={
-                resultadoPesquisa ? styles2.botaoCarregarComics : styles2.oculto
+                resultadoPesquisa ? styles2.botaoCarregarHerois : styles2.oculto
               }>
               <Botao
                 onClick={() => {
                   setCarregandoImagem(true);
-                  setTimeout(() => maisComics(console.log("clicou"), 500));
+                  setTimeout(() => maisHerois(console.log("clicou"), 500));
                 }}
                 nome='Mais Heróis'
               />
@@ -127,7 +130,7 @@ const Herois = () => {
             onClick={() =>
               setTimeout(() => {
                 setCarregandoImagem(true);
-                maisComics(
+                maisHerois(
                   setLimite((limiteAtual) => limiteAtual - 30),
                   setOffset(offset + 100)
                 );
@@ -139,7 +142,7 @@ const Herois = () => {
       </section>
 
       <footer>
-        <Rodape />
+        <Rodape id={styles2.rodape}/>
       </footer>
     </>
   );

@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import styles from "./Cabecalho.module.css";
 import logo from "../../Imagens/marvel-comics-logo.png";
 
-const Cabecalho = () => {
+const Cabecalho = (props) => {
   return (
     <div className={styles.containerCabecalho}>
-      <div className={styles.cabecalho}>
+      <div className={styles.cabecalho} id={props.id}>
         <div className={styles.cabecalhoTitulo}>
           <img className={styles.cabecalhoImagem} src={logo} alt='Marvel logo' />
         </div>
@@ -15,7 +15,7 @@ const Cabecalho = () => {
         <div className={styles.cabecalhoMenu}>
           <ul>
             <li>
-              <Link className={styles.cabecalhoMenuLink} to='/herois'>Heróis</Link>
+              <Link className={styles.cabecalhoMenuLink} to={props.to}>{props.nome}</Link>
             </li>
           </ul>
         </div>

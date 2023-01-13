@@ -2,14 +2,14 @@
   display: none;
 }
 
-.containerBotaoCarregarComics {
+.containerBotaoCarregarHerois {
   width: 100%;
   height: auto;
   display: flex;
   justify-content: center;
 }
 
-.botaoCarregarComics button {
+.botaoCarregarHerois button {
   width: 150px;
   height: 35px;
   margin: 50px 0;
@@ -21,4 +21,9 @@
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
+}
+
+#cabecalho,
+#rodape {
+  background: #0648a9;
 }

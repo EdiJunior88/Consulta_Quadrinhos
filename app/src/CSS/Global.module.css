@@ -28,6 +28,11 @@ body {
   --cor-texto-botaoCarregarComics: #0648a9;
   --fonte-texto-botaoCarregarComics: "Sofia Sans Condensed", sans-serif;
 
+  --cor-fundo-botaoCarregarHerois: #fff;
+  --cor-borda-botaoCarregarHerois: #da5047;
+  --cor-texto-botaoCarregarHerois: #0648a9;
+  --fonte-texto-botaoCarregarHerois: "Sofia Sans Condensed", sans-serif;
+
   --cor-fundo-Modal: #fff;
   --cor-fundo-overlayModal: #0647a950;
   --cor-borda-botaoModal: #da5047;

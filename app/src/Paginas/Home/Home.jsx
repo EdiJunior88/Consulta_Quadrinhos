@@ -62,12 +62,13 @@ const Home = () => {
   return (
     <>
       <header>
-        <Cabecalho />
+        <Cabecalho nome='Heróis' to='/herois' />
       </header>
 
       <section>
         {/* Campo de Busca (Componente)*/}
         <Busca
+          placeholder='Digite um nome: Marvel, Rogue...'
           busca={(buscas) => {
             setTimeout(() => {
               setCarregandoImagem(true);
