@@ -10,7 +10,7 @@ import Cabecalho from "../../Componentes/Cabecalho/Cabecalho";
 import Botao from "../../Componentes/Botao/Botao";
 import Rodape from "../../Componentes/Rodape/Rodape";
 
-const urlPrincipal = "http://gateway.marvel.com/v1/public/";
+const urlPrincipal = "https://gateway.marvel.com/v1/public/";
 const chavePublica = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PUBLICA;
 const chavePrivada = process.env.REACT_APP_ACCESS_TOKEN_MARVEL_API_PRIVADA;
 const data = Number(new Date());
