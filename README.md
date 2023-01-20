@@ -91,8 +91,9 @@
 
 <hr>
 
-<h3>Site do projeto</h3>
-<strong><a href="https://consulta-quadrinhos.netlify.app/" target="_blank">https://consulta-quadrinhos.netlify.app/</a></strong>
+<h3>Site e Status do Projeto</h3>
+<strong><a href="https://consulta-quadrinhos.netlify.app/" target="_blank">https://consulta-quadrinhos.netlify.app/</a></strong><br><br>
+<img src="https://api.netlify.com/api/v1/badges/a42416b0-72dc-4a37-90c4-c60d5e59566f/deploy-status" />
 
 <hr>
 
