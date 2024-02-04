@@ -1,9 +1,9 @@
 repo_name: EdiJunior88/Consulta_Quadrinhos
-report_id: f646314cbd0b52491efca8d00fb072ea
+report_id: b77217516a594bff94904f760a12e52f
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-31T14:33:29+00:00'
-requested_by: dependabot[bot]
+timestamp: '2024-02-04T14:38:54+00:00'
+requested_by: EdiJunior88
 provider: github
 branch: main
 detected_tools_count: 16
