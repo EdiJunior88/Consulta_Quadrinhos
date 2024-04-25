@@ -21,11 +21,6 @@ Para ver todas as tecnologias [clique aqui](/techstack.md)
 
 <hr>
 
-<h3>Status do Projeto</h3>
-<img src="https://api.netlify.com/api/v1/badges/a42416b0-72dc-4a37-90c4-c60d5e59566f/deploy-status" />
-
-<hr>
-
 <img src="./app/src/Imagens/Consulta-Quadrinhos-Index.jpg">
 
 <hr>
