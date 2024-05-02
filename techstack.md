@@ -3,11 +3,11 @@
 ## Tech Stack
 EdiJunior88/Consulta_Quadrinhos is built on the following main stack:
 
-- [React](https://reactjs.org/) – Javascript UI Libraries
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
-- [Netlify](https://www.netlify.com/) – Static Web Hosting
 - [PostCSS](https://github.com/postcss/postcss) – CSS Pre-processors / Extensions
+- [React](https://reactjs.org/) – Javascript UI Libraries
 - [React Router](https://github.com/rackt/react-router) – JavaScript Framework Components
+- [Netlify](https://www.netlify.com/) – Static Web Hosting
 - [axios](https://github.com/mzabriskie/axios) – Javascript Utilities & Libraries
 
 Full tech stack [here](/techstack.md)
@@ -18,11 +18,11 @@ Full tech stack [here](/techstack.md)
 ## Tech Stack
 EdiJunior88/Consulta_Quadrinhos is built on the following main stack:
 
-- <img width='25' height='25' src='https://img.stackshare.io/service/1020/OYIaJ1KK.png' alt='React'/> [React](https://reactjs.org/) – Javascript UI Libraries
 - <img width='25' height='25' src='https://img.stackshare.io/service/1209/javascript.jpeg' alt='JavaScript'/> [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – Languages
-- <img width='25' height='25' src='https://img.stackshare.io/service/2748/default_5dfbb146cf22182bca88c7d07f2515a5888fc12a.jpg' alt='Netlify'/> [Netlify](https://www.netlify.com/) – Static Web Hosting
 - <img width='25' height='25' src='https://img.stackshare.io/service/3339/rlFcjEdI.png' alt='PostCSS'/> [PostCSS](https://github.com/postcss/postcss) – CSS Pre-processors / Extensions
+- <img width='25' height='25' src='https://img.stackshare.io/service/1020/OYIaJ1KK.png' alt='React'/> [React](https://reactjs.org/) – Javascript UI Libraries
 - <img width='25' height='25' src='https://img.stackshare.io/service/3350/8261421.png' alt='React Router'/> [React Router](https://github.com/rackt/react-router) – JavaScript Framework Components
+- <img width='25' height='25' src='https://img.stackshare.io/service/2748/default_5dfbb146cf22182bca88c7d07f2515a5888fc12a.jpg' alt='Netlify'/> [Netlify](https://www.netlify.com/) – Static Web Hosting
 - <img width='25' height='25' src='https://img.stackshare.io/no-img-open-source.png' alt='axios'/> [axios](https://github.com/mzabriskie/axios) – Javascript Utilities & Libraries
 
 Full tech stack [here](/techstack.md)
@@ -34,7 +34,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [EdiJunior88/Consulta_Quadrinhos](https://github.com/EdiJunior88/Consulta_Quadrinhos)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|16<br/>Tools used|02/04/24 <br/>Report generated|
+|16<br/>Tools used|05/02/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -82,7 +82,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="https://github.com/rackt/react-router">React Router</a></sub>
   <br>
-  <sub>v6.21.3</sub>
+  <sub>v6.22.3</sub>
 </td>
 
 </tr>
@@ -129,7 +129,7 @@ Full tech stack [here](/techstack.md)
   <br>
   <sub><a href="https://github.com/mzabriskie/axios">axios</a></sub>
   <br>
-  <sub>v1.6.7</sub>
+  <sub>v1.6.8</sub>
 </td>
 
 </tr>
@@ -142,13 +142,13 @@ Full tech stack [here](/techstack.md)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
-|[@testing-library/jest-dom](https://www.npmjs.com/@testing-library/jest-dom)|v6.3.0|01/29/24|dependabot[bot] |MIT|N/A|
-|[@testing-library/react](https://www.npmjs.com/@testing-library/react)|v14.1.2|01/29/24|dependabot[bot] |MIT|N/A|
+|[@testing-library/jest-dom](https://www.npmjs.com/@testing-library/jest-dom)|v6.4.2|04/15/24|dependabot[bot] |MIT|N/A|
+|[@testing-library/react](https://www.npmjs.com/@testing-library/react)|v15.0.2|04/15/24|dependabot[bot] |MIT|N/A|
 |[md5](https://www.npmjs.com/md5)|v2.3.0|01/06/23|EdiJunior88 |BSD-3-Clause|N/A|
-|[react-dom](https://www.npmjs.com/react-dom)|v18.2.0|01/29/24|dependabot[bot] |MIT|N/A|
-|[react-modal](https://www.npmjs.com/react-modal)|v3.16.1|01/15/24|dependabot[bot] |MIT|N/A|
-|[react-router-dom](https://www.npmjs.com/react-router-dom)|v6.21.3|01/29/24|dependabot[bot] |MIT|N/A|
-|[react-scripts](https://www.npmjs.com/react-scripts)|v5.0.1|01/15/24|dependabot[bot] |MIT|N/A|
+|[react-dom](https://www.npmjs.com/react-dom)|v18.2.0|04/15/24|dependabot[bot] |MIT|N/A|
+|[react-modal](https://www.npmjs.com/react-modal)|v3.16.1|04/15/24|dependabot[bot] |MIT|N/A|
+|[react-router-dom](https://www.npmjs.com/react-router-dom)|v6.22.3|04/15/24|dependabot[bot] |MIT|N/A|
+|[react-scripts](https://www.npmjs.com/react-scripts)|v5.0.1|04/15/24|dependabot[bot] |MIT|N/A|
 
 <br/>
 <div align='center'>
